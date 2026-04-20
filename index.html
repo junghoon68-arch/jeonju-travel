@@ -4932,7 +4932,10 @@ a,button{-webkit-tap-highlight-color:transparent;}
         </div>
         <div class="wspot">📍 주요 경유지</div>
         <div class="wroute">관광안내소 → 김치문화관 → 소리문화관 → 전통술박물관 → 승광재 → 은행로 → 한옥마을역사관 → 부채문화관 → 최명의문학관 → 교동미술관 → 경기전 → 어진박물관 → 전동성당 → 태조로 → 전주공예품전시관 → 오목대 → 양사재 → 전통문화연수원 → 전주향교 → 완판본문화관 → 한벽문화관 → 한벽당 → 오목교 → 강암서예관 → 남천교</div>
-        <a class="wbtn" href="https://map.naver.com/p/search/전주%20한옥마을%20관광안내소" target="_blank">🗺 출발지 네이버지도</a>
+        <button class="wbtn" onclick="walkCourse1()" type="button"
+            style="background:linear-gradient(to right,#2E7D32,#66BB6A);border:none;cursor:pointer;width:100%;font-family:inherit;-webkit-tap-highlight-color:transparent;">
+            🗺 현재 위치 → 전체 코스 경로 (도보)
+          </button>
       </div>
     </div>
 
@@ -5480,6 +5483,100 @@ window.walkToStay = function() {
     { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
   );
 };
+
+// ═══ 코스 1: 한옥마을 한 바퀴 (네이버 지도 앱 도보 경로) ═══
+window.walkCourse1 = function() {
+  const CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
+  
+  // 코스 1 대표 경유지 (출발지 제외, 도착지 포함 최대 5개)
+  // 네이버 지도 앱 URL Scheme: slat/slng(출발), dlat/dlng(도착), v1~v5(경유지)
+  const WAYPOINTS = [
+    { name: '경기전',     lat: 35.8147, lng: 127.1484 },
+    { name: '전동성당',   lat: 35.8144, lng: 127.1464 },
+    { name: '오목대',     lat: 35.8160, lng: 127.1511 },
+    { name: '전주향교',   lat: 35.8157, lng: 127.1537 }
+  ];
+  const DEST = { name: '한벽당', lat: 35.8120, lng: 127.1490 };
+  
+  // 네이버 지도 앱 딥링크 생성 및 실행
+  const openNaverMapApp = (userLat, userLng) => {
+    const params = [
+      `slat=${userLat}`,
+      `slng=${userLng}`,
+      `sname=${encodeURIComponent('내위치')}`,
+      `dlat=${DEST.lat}`,
+      `dlng=${DEST.lng}`,
+      `dname=${encodeURIComponent(DEST.name)}`,
+    ];
+    // 경유지 추가 (v1~v5)
+    WAYPOINTS.forEach((w, idx) => {
+      const n = idx + 1;
+      params.push(`v${n}lat=${w.lat}`);
+      params.push(`v${n}lng=${w.lng}`);
+      params.push(`v${n}name=${encodeURIComponent(w.name)}`);
+    });
+    params.push('appname=com.jeonju.travel');
+    
+    const url = 'nmap://route/walk?' + params.join('&');
+    console.log('[walkCourse1] 네이버 앱 호출:', url);
+    window.location.href = url;
+  };
+  
+  // 1. 캐시된 위치 확인
+  try {
+    const cached = localStorage.getItem('jeonju_userLoc');
+    if (cached) {
+      const data = JSON.parse(cached);
+      const age = Date.now() - (data.ts || 0);
+      if (data.lat && data.lng && age < CACHE_MAX_AGE) {
+        openNaverMapApp(data.lat, data.lng);
+        return;
+      }
+    }
+  } catch(e) { console.warn('[walkCourse1] 캐시 오류:', e); }
+  
+  // 2. 위치 권한 요청
+  if (!navigator.geolocation) {
+    alert('이 브라우저는 위치 정보를 지원하지 않습니다.\n네이버 지도 앱을 직접 실행해주세요.');
+    return;
+  }
+  
+  const statusDiv = document.createElement('div');
+  statusDiv.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);' +
+    'background:#fff;padding:20px 30px;border-radius:14px;box-shadow:0 4px 20px rgba(0,0,0,.2);' +
+    'z-index:99999;font-size:14px;text-align:center;font-family:inherit;';
+  statusDiv.innerHTML = '📡 <b>위치 확인 중...</b><br><span style="font-size:12px;color:#888;">권한 팝업이 뜨면 허용해주세요</span>';
+  document.body.appendChild(statusDiv);
+  
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const { latitude, longitude } = pos.coords;
+      localStorage.setItem('jeonju_userLoc', JSON.stringify({
+        lat: latitude, lng: longitude, ts: Date.now()
+      }));
+      document.body.removeChild(statusDiv);
+      openNaverMapApp(latitude, longitude);
+    },
+    err => {
+      document.body.removeChild(statusDiv);
+      if (err.code === 1) {
+        alert('🚫 위치 권한이 거부됐어요.\n\n' +
+              '📱 위치 허용 방법:\n\n' +
+              '[Android]\n' +
+              '• 주소창 왼쪽 🔒 자물쇠 아이콘 클릭\n' +
+              '• "권한" → "위치" → "허용"\n\n' +
+              '[iPhone]\n' +
+              '• 설정 앱 → Safari → 위치 → 허용\n\n' +
+              '권한 허용 후 다시 시도해주세요.');
+      } else {
+        alert('⚠️ 위치를 찾을 수 없어요.\nGPS 신호를 확인해주세요.');
+      }
+    },
+    { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
+  );
+};
+
+
 
 
 // Haversine 공식 - 두 지점 간 실제 거리 (미터)
