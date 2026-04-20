@@ -929,7 +929,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
 .loc-modal-btn-cancel:active,.loc-modal-btn-ok:active{transform:scale(.96);}
 
 
-/* 친구 이름 영역 (헤더 중앙) */
+/* 친구 이름 영역 */
 .friend-names-line {
   display:block !important;
   font-size:0.65em !important;
@@ -940,241 +940,73 @@ a,button{-webkit-tap-highlight-color:transparent;}
   letter-spacing:0.02em;
   opacity:0.9;
 }
-
-
-/* ═════════════════════════════════════════ */
-/* 환영 페이지 (Welcome Overlay) */
-/* ═════════════════════════════════════════ */
+/* 환영 페이지 */
 #welcome-overlay {
   position:fixed; top:0; left:0; right:0; bottom:0;
   background:linear-gradient(135deg, #FDF6EC 0%, #FCE4EC 100%);
   z-index:99999;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
-  padding:30px 20px;
-  overflow-y:auto;
+  padding:30px 20px; overflow-y:auto;
   font-family:'Noto Sans KR', sans-serif;
 }
 #welcome-overlay.hidden { display:none; }
-.welcome-icon {
-  font-size:72px;
-  margin-bottom:10px;
-  filter:drop-shadow(0 4px 12px rgba(226,114,91,.35));
-}
-.welcome-title {
-  font-family:'Noto Serif KR', serif;
-  font-size:30px;
-  font-weight:900;
-  color:#3D1A2A;
-  margin-bottom:6px;
-  letter-spacing:-.02em;
-}
-.welcome-sub {
-  font-size:14px;
-  color:#666;
-  margin-bottom:28px;
-  text-align:center;
-  line-height:1.7;
-}
+.welcome-icon { font-size:72px; margin-bottom:10px; filter:drop-shadow(0 4px 12px rgba(226,114,91,.35)); }
+.welcome-title { font-family:'Noto Serif KR', serif; font-size:30px; font-weight:900; color:#3D1A2A; margin-bottom:6px; letter-spacing:-.02em; }
+.welcome-sub { font-size:14px; color:#666; margin-bottom:28px; text-align:center; line-height:1.7; }
 .welcome-sub strong { color:#E2725B; font-weight:700; }
-.welcome-inputs {
-  width:100%;
-  max-width:340px;
-  display:flex; flex-direction:column; gap:10px;
-  margin-bottom:24px;
-}
-.welcome-input-row {
-  display:flex; align-items:center; gap:12px;
-  background:#fff;
-  border-radius:14px;
-  padding:12px 16px;
-  box-shadow:0 2px 10px rgba(226,114,91,.08);
-  transition:all .15s;
-}
-.welcome-input-row:focus-within {
-  box-shadow:0 2px 14px rgba(226,114,91,.2);
-  transform:translateY(-1px);
-}
-.welcome-input-num {
-  width:28px; height:28px;
-  background:linear-gradient(135deg, #E2725B, #BF5F3A);
-  color:#fff;
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-weight:700; font-size:13px;
-  flex-shrink:0;
-  box-shadow:0 2px 6px rgba(226,114,91,.3);
-}
-.welcome-input-field {
-  flex:1;
-  border:none; outline:none;
-  background:transparent;
-  font-size:16px;
-  color:#3D1A2A;
-  font-family:inherit;
-}
+.welcome-inputs { width:100%; max-width:340px; display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
+.welcome-input-row { display:flex; align-items:center; gap:12px; background:#fff; border-radius:14px; padding:12px 16px; box-shadow:0 2px 10px rgba(226,114,91,.08); transition:all .15s; }
+.welcome-input-row:focus-within { box-shadow:0 2px 14px rgba(226,114,91,.2); transform:translateY(-1px); }
+.welcome-input-num { width:28px; height:28px; background:linear-gradient(135deg, #E2725B, #BF5F3A); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; flex-shrink:0; box-shadow:0 2px 6px rgba(226,114,91,.3); }
+.welcome-input-field { flex:1; border:none; outline:none; background:transparent; font-size:16px; color:#3D1A2A; font-family:inherit; }
 .welcome-input-field::placeholder { color:#ccc; }
-.welcome-btn {
-  width:100%;
-  max-width:340px;
-  background:linear-gradient(135deg, #E2725B, #BF5F3A);
-  color:#fff;
-  border:none;
-  padding:16px;
-  border-radius:14px;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-  box-shadow:0 4px 16px rgba(226,114,91,.35);
-  font-family:inherit;
-  transition:transform .1s;
-  -webkit-tap-highlight-color:transparent;
-}
+.welcome-btn { width:100%; max-width:340px; background:linear-gradient(135deg, #E2725B, #BF5F3A); color:#fff; border:none; padding:16px; border-radius:14px; font-size:16px; font-weight:700; cursor:pointer; box-shadow:0 4px 16px rgba(226,114,91,.35); font-family:inherit; transition:transform .1s; -webkit-tap-highlight-color:transparent; }
 .welcome-btn:active { transform:scale(.97); }
-
-/* ═════════════════════════════════════════ */
-/* 설정 화면 (Bottom Sheet) */
-/* ═════════════════════════════════════════ */
-#settings-overlay {
-  position:fixed; top:0; left:0; right:0; bottom:0;
-  background:rgba(0,0,0,.45);
-  z-index:99998;
-  display:none;
-  align-items:flex-end; justify-content:center;
-  -webkit-backdrop-filter:blur(3px);
-  backdrop-filter:blur(3px);
-}
+/* 설정 */
+#settings-overlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.45); z-index:99998; display:none; align-items:flex-end; justify-content:center; -webkit-backdrop-filter:blur(3px); backdrop-filter:blur(3px); }
 #settings-overlay.visible { display:flex; }
-.settings-sheet {
-  background:#fff;
-  width:100%;
-  max-width:500px;
-  border-radius:20px 20px 0 0;
-  padding:24px 20px 20px;
-  max-height:85vh;
-  overflow-y:auto;
-  position:relative;
-  box-shadow:0 -10px 40px rgba(0,0,0,.15);
-  animation:slideUp .25s ease-out;
-}
-@keyframes slideUp {
-  from { transform:translateY(100%); }
-  to { transform:translateY(0); }
-}
-.settings-title {
-  font-size:20px; font-weight:800; color:#3D1A2A;
-  margin-bottom:8px; text-align:center;
-  font-family:'Noto Serif KR', serif;
-}
-.settings-subtitle {
-  font-size:13px; color:#888;
-  text-align:center; margin-bottom:20px;
-}
-.settings-close {
-  position:absolute; top:12px; right:12px;
-  background:none; border:none;
-  font-size:28px; color:#bbb;
-  cursor:pointer;
-  width:40px; height:40px;
-  border-radius:50%;
-  -webkit-tap-highlight-color:transparent;
-}
+.settings-sheet { background:#fff; width:100%; max-width:500px; border-radius:20px 20px 0 0; padding:24px 20px 20px; max-height:85vh; overflow-y:auto; position:relative; box-shadow:0 -10px 40px rgba(0,0,0,.15); animation:slideUp .25s ease-out; }
+@keyframes slideUp { from { transform:translateY(100%); } to { transform:translateY(0); } }
+.settings-title { font-size:20px; font-weight:800; color:#3D1A2A; margin-bottom:8px; text-align:center; font-family:'Noto Serif KR', serif; }
+.settings-subtitle { font-size:13px; color:#888; text-align:center; margin-bottom:20px; }
+.settings-close { position:absolute; top:12px; right:12px; background:none; border:none; font-size:28px; color:#bbb; cursor:pointer; width:40px; height:40px; border-radius:50%; -webkit-tap-highlight-color:transparent; }
 .settings-close:active { background:#f5f5f5; }
-
-/* 설정 버튼 (우측 상단 고정) */
-.settings-fab {
-  position:fixed;
-  top:max(14px, env(safe-area-inset-top));
-  right:14px;
-  width:42px; height:42px;
-  background:rgba(255,255,255,.92);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  font-size:20px;
-  box-shadow:0 2px 10px rgba(0,0,0,.12);
-  z-index:9000;
-  cursor:pointer;
-  border:none;
-  -webkit-tap-highlight-color:transparent;
-  -webkit-backdrop-filter:blur(8px);
-  backdrop-filter:blur(8px);
-  transition:transform .15s;
-}
+.settings-fab { position:fixed; top:max(14px, env(safe-area-inset-top)); right:14px; width:42px; height:42px; background:rgba(255,255,255,.92); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; box-shadow:0 2px 10px rgba(0,0,0,.12); z-index:9000; cursor:pointer; border:none; -webkit-tap-highlight-color:transparent; -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); transition:transform .15s; }
 .settings-fab:active { transform:scale(.9); }
 
 </style>
 </head>
 <body>
 
-<!-- ═════════════════════════════════════════ -->
-<!-- 환영 페이지 (첫 방문 시 1회) -->
-<!-- ═════════════════════════════════════════ -->
+<!-- 환영 페이지 -->
 <div id="welcome-overlay" class="hidden">
   <div class="welcome-icon">🏯</div>
   <div class="welcome-title">전주 여행</div>
   <div class="welcome-sub">함께 떠나는 친구<br><strong>5명의 이름</strong>을 입력해주세요</div>
   <div class="welcome-inputs">
-    <div class="welcome-input-row">
-      <div class="welcome-input-num">1</div>
-      <input type="text" class="welcome-input-field" id="name-1" placeholder="이름" autocomplete="off">
-    </div>
-    <div class="welcome-input-row">
-      <div class="welcome-input-num">2</div>
-      <input type="text" class="welcome-input-field" id="name-2" placeholder="이름" autocomplete="off">
-    </div>
-    <div class="welcome-input-row">
-      <div class="welcome-input-num">3</div>
-      <input type="text" class="welcome-input-field" id="name-3" placeholder="이름" autocomplete="off">
-    </div>
-    <div class="welcome-input-row">
-      <div class="welcome-input-num">4</div>
-      <input type="text" class="welcome-input-field" id="name-4" placeholder="이름" autocomplete="off">
-    </div>
-    <div class="welcome-input-row">
-      <div class="welcome-input-num">5</div>
-      <input type="text" class="welcome-input-field" id="name-5" placeholder="이름" autocomplete="off">
-    </div>
+    <div class="welcome-input-row"><div class="welcome-input-num">1</div><input type="text" class="welcome-input-field" id="name-1" placeholder="이름" autocomplete="off"></div>
+    <div class="welcome-input-row"><div class="welcome-input-num">2</div><input type="text" class="welcome-input-field" id="name-2" placeholder="이름" autocomplete="off"></div>
+    <div class="welcome-input-row"><div class="welcome-input-num">3</div><input type="text" class="welcome-input-field" id="name-3" placeholder="이름" autocomplete="off"></div>
+    <div class="welcome-input-row"><div class="welcome-input-num">4</div><input type="text" class="welcome-input-field" id="name-4" placeholder="이름" autocomplete="off"></div>
+    <div class="welcome-input-row"><div class="welcome-input-num">5</div><input type="text" class="welcome-input-field" id="name-5" placeholder="이름" autocomplete="off"></div>
   </div>
-  <button class="welcome-btn" id="welcome-start-btn" onclick="saveFriendNames()">시작하기 →</button>
+  <button class="welcome-btn" onclick="saveFriendNames()">시작하기 →</button>
 </div>
-
-<!-- 설정 버튼 (우측 상단 고정) -->
-<button class="settings-fab" onclick="openSettings()" aria-label="설정" id="settings-fab-btn">⚙️</button>
-
-<!-- 설정 오버레이 -->
+<button class="settings-fab" onclick="openSettings()" aria-label="설정">⚙️</button>
 <div id="settings-overlay">
   <div class="settings-sheet">
     <button class="settings-close" onclick="closeSettings()" aria-label="닫기">×</button>
     <div class="settings-title">⚙️ 설정</div>
     <div class="settings-subtitle">친구 이름 수정</div>
     <div class="welcome-inputs" style="max-width:none;">
-      <div class="welcome-input-row">
-        <div class="welcome-input-num">1</div>
-        <input type="text" class="welcome-input-field" id="edit-name-1" autocomplete="off">
-      </div>
-      <div class="welcome-input-row">
-        <div class="welcome-input-num">2</div>
-        <input type="text" class="welcome-input-field" id="edit-name-2" autocomplete="off">
-      </div>
-      <div class="welcome-input-row">
-        <div class="welcome-input-num">3</div>
-        <input type="text" class="welcome-input-field" id="edit-name-3" autocomplete="off">
-      </div>
-      <div class="welcome-input-row">
-        <div class="welcome-input-num">4</div>
-        <input type="text" class="welcome-input-field" id="edit-name-4" autocomplete="off">
-      </div>
-      <div class="welcome-input-row">
-        <div class="welcome-input-num">5</div>
-        <input type="text" class="welcome-input-field" id="edit-name-5" autocomplete="off">
-      </div>
+      <div class="welcome-input-row"><div class="welcome-input-num">1</div><input type="text" class="welcome-input-field" id="edit-name-1" autocomplete="off"></div>
+      <div class="welcome-input-row"><div class="welcome-input-num">2</div><input type="text" class="welcome-input-field" id="edit-name-2" autocomplete="off"></div>
+      <div class="welcome-input-row"><div class="welcome-input-num">3</div><input type="text" class="welcome-input-field" id="edit-name-3" autocomplete="off"></div>
+      <div class="welcome-input-row"><div class="welcome-input-num">4</div><input type="text" class="welcome-input-field" id="edit-name-4" autocomplete="off"></div>
+      <div class="welcome-input-row"><div class="welcome-input-num">5</div><input type="text" class="welcome-input-field" id="edit-name-5" autocomplete="off"></div>
     </div>
     <button class="welcome-btn" onclick="updateFriendNames()">저장</button>
-    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eee;text-align:center;">
-      <div style="font-size:11px;color:#aaa;line-height:1.6;">
-        🏯 전주 여행 PWA v1.0<br>
-        웃음꽃 피던 그때처럼, 전주에서 다시!
-      </div>
-    </div>
+    <div style="margin-top:20px;padding-top:16px;border-top:1px solid #eee;text-align:center;"><div style="font-size:11px;color:#aaa;line-height:1.6;">🏯 전주 여행 PWA v1.1<br>웃음꽃 피던 그때처럼, 전주에서 다시!</div></div>
   </div>
 </div>
 
@@ -1396,11 +1228,11 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span>🕐 11:00~20:30</span><span>💰 1인 12,000원~</span>
   </div>
   <div style="display:flex;gap:5px;">
-    <a href="https://map.naver.com/p/search/%ED%95%98%EC%88%99%EC%98%81%20%EA%B0%80%EB%A7%88%EC%86%A5%EB%B9%84%EB%B9%94%EB%B0%A5%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%815%EA%B8%B8" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%ED%95%98%EC%88%99%EC%98%81%20%EA%B0%80%EB%A7%88%EC%86%A5%EB%B9%84%EB%B9%94%EB%B0%A5%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%815%EA%B8%B8%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%ED%95%98%EC%88%99%EC%98%81%20%EA%B0%80%EB%A7%88%EC%86%A5%EB%B9%84%EB%B9%94%EB%B0%A5%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%815%EA%B8%B8%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://naver.me/xUw1qmUC" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
+    <a href="https://search.naver.com/search.naver?query=%ED%95%98%EC%88%99%EC%98%81%EA%B0%80%EB%A7%88%EC%86%A5%EB%B9%84%EB%B9%94%EB%B0%A5%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=%ED%95%98%EC%88%99%EC%98%81%EA%B0%80%EB%A7%88%EC%86%A5%EB%B9%84%EB%B9%94%EB%B0%A5%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <a href="tel:063-285-4288" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%98%EC%88%99%EC%98%81%20%EA%B0%80%EB%A7%88%EC%86%A5%EB%B9%84%EB%B9%94%EB%B0%A5%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%815%EA%B8%B8" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%98%EC%88%99%EC%98%81%EA%B0%80%EB%A7%88%EC%86%A5%EB%B9%84%EB%B9%94%EB%B0%A5" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
     <div class="tlbl"><div class="tdot" style="background:var(--sage)"></div><div class="ttxt" style="color:var(--sage)">15:30 · 전통차</div><div class="tline" style="background:linear-gradient(to right,rgba(107,143,113,.3),transparent)"></div></div>
@@ -1426,11 +1258,11 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span>🕐 11:00~19:00</span><span>💰 차 8,000원~</span>
   </div>
   <div style="display:flex;gap:5px;">
-    <a href="https://map.naver.com/p/search/%ED%95%9C%EC%98%A5%EC%B9%B4%ED%8E%98%20%ED%96%89%EC%9B%90%20%EC%9D%80%ED%96%89%EB%A1%9C" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%ED%95%9C%EC%98%A5%EC%B9%B4%ED%8E%98%20%ED%96%89%EC%9B%90%20%EC%9D%80%ED%96%89%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%ED%95%9C%EC%98%A5%EC%B9%B4%ED%8E%98%20%ED%96%89%EC%9B%90%20%EC%9D%80%ED%96%89%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://naver.me/Fw7iuLPx" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
+    <a href="https://search.naver.com/search.naver?query=%EC%A0%84%EC%A3%BC%EC%B9%B4%ED%8E%98%ED%96%89%EC%9B%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=%EC%A0%84%EC%A3%BC%EC%B9%B4%ED%8E%98%ED%96%89%EC%9B%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <a href="tel:063-284-6566" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EC%98%A5%EC%B9%B4%ED%8E%98%20%ED%96%89%EC%9B%90%20%EC%9D%80%ED%96%89%EB%A1%9C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%EC%B9%B4%ED%8E%98%ED%96%89%EC%9B%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
     <div class="tlbl"><div class="tdot"></div><div class="ttxt">17:30 · 저녁</div><div class="tline"></div></div>
@@ -1456,11 +1288,11 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span>🕐 11:00~22:00</span><span>💰 1인 18,000원~</span>
   </div>
   <div style="display:flex;gap:5px;">
-    <a href="https://map.naver.com/p/search/%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EB%AC%BC%EA%B0%88%EB%B9%84%20%ED%92%8D%EB%82%A8%EB%8F%992%EA%B0%80" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EB%AC%BC%EA%B0%88%EB%B9%84%20%ED%92%8D%EB%82%A8%EB%8F%992%EA%B0%80%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EB%AC%BC%EA%B0%88%EB%B9%84%20%ED%92%8D%EB%82%A8%EB%8F%992%EA%B0%80%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://naver.me/Ixsqb1TT" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
+    <a href="https://search.naver.com/search.naver?query=%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EB%AC%BC%EA%B0%88%EB%B9%84%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EB%AC%BC%EA%B0%88%EB%B9%84%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <a href="tel:063-283-6666" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EB%AC%BC%EA%B0%88%EB%B9%84%20%ED%92%8D%EB%82%A8%EB%8F%992%EA%B0%80" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EB%AC%BC%EA%B0%88%EB%B9%84" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
     <div class="tlbl"><div class="tdot" style="background:#673AB7"></div><div class="ttxt" style="color:#673AB7">20:30 · 야간 산책</div><div class="tline" style="background:linear-gradient(to right,rgba(103,58,183,.3),transparent)"></div></div>
@@ -1486,11 +1318,11 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span>🕐 상시 개방</span><span>💰 무료</span>
   </div>
   <div style="display:flex;gap:5px;">
-    <a href="https://map.naver.com/p/search/%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%EB%A1%9C" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://naver.me/GBFzgHXH" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
+    <a href="https://search.naver.com/search.naver?query=%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;">📞</span>
-    <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%EB%A1%9C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EC%95%BC%EA%B2%BD" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
     <div class="tlbl"><div class="tdot" style="background:#FFB300"></div><div class="ttxt" style="color:#FF8F00">22:00 · 가맥 타임</div><div class="tline" style="background:linear-gradient(to right,rgba(255,179,0,.4),transparent)"></div></div>
@@ -1639,11 +1471,11 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span>🕐 11:00~20:00</span><span>💰 음료 7,000원~</span>
   </div>
   <div style="display:flex;gap:5px;">
-    <a href="https://map.naver.com/p/search/%EC%B9%B4%ED%8E%98%20%EB%8D%94%EB%A7%88%EC%8B%9C%EB%9E%91%EA%B2%8C%20%ED%83%9C%EC%A1%B0%EB%A1%9C" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%EC%B9%B4%ED%8E%98%20%EB%8D%94%EB%A7%88%EC%8B%9C%EB%9E%91%EA%B2%8C%20%ED%83%9C%EC%A1%B0%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%EC%B9%B4%ED%8E%98%20%EB%8D%94%EB%A7%88%EC%8B%9C%EB%9E%91%EA%B2%8C%20%ED%83%9C%EC%A1%B0%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://naver.me/x1VvUHJL" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
+    <a href="https://search.naver.com/search.naver?query=The%20%EB%A7%88%EC%8B%9C%EB%9E%91%EA%B2%8C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=The%20%EB%A7%88%EC%8B%9C%EB%9E%91%EA%B2%8C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <a href="tel:063-232-1919" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%EC%B9%B4%ED%8E%98%20%EB%8D%94%EB%A7%88%EC%8B%9C%EB%9E%91%EA%B2%8C%20%ED%83%9C%EC%A1%B0%EB%A1%9C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=The%20%EB%A7%88%EC%8B%9C%EB%9E%91%EA%B2%8C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
     <div class="tlbl"><div class="tdot"></div><div class="ttxt">13:00 · 점심</div><div class="tline"></div></div>
@@ -1669,11 +1501,11 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span>🕐 10:30~20:30</span><span>💰 1인 15,000원~</span>
   </div>
   <div style="display:flex;gap:5px;">
-    <a href="https://map.naver.com/p/search/%ED%95%9C%EC%9A%B8%EB%B0%A5%EC%83%81%20%ED%83%9C%EC%A1%B0%EB%A1%9C" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%ED%95%9C%EC%9A%B8%EB%B0%A5%EC%83%81%20%ED%83%9C%EC%A1%B0%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%ED%95%9C%EC%9A%B8%EB%B0%A5%EC%83%81%20%ED%83%9C%EC%A1%B0%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://naver.me/52R5LzU3" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
+    <a href="https://search.naver.com/search.naver?query=%ED%95%9C%EC%9A%B8%EB%B0%A5%EC%83%81%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=%ED%95%9C%EC%9A%B8%EB%B0%A5%EC%83%81%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <a href="tel:063-227-4321" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EC%9A%B8%EB%B0%A5%EC%83%81%20%ED%83%9C%EC%A1%B0%EB%A1%9C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EC%9A%B8%EB%B0%A5%EC%83%81" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
     <div class="tlbl"><div class="tdot" style="background:var(--sage)"></div><div class="ttxt" style="color:var(--sage)">15:00 · 마지막 카페</div><div class="tline" style="background:linear-gradient(to right,rgba(107,143,113,.3),transparent)"></div></div>
@@ -1699,11 +1531,11 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span>🕐 09:30~21:00</span><span>💰 빙수 12,000원~</span>
   </div>
   <div style="display:flex;gap:5px;">
-    <a href="https://map.naver.com/p/search/%EC%9D%B4%EB%A5%B4%EB%A6%AC%20%EC%9D%80%ED%96%89%EB%A1%9C" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%EC%9D%B4%EB%A5%B4%EB%A6%AC%20%EC%9D%80%ED%96%89%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%EC%9D%B4%EB%A5%B4%EB%A6%AC%20%EC%9D%80%ED%96%89%EB%A1%9C%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://naver.me/GWe2oI5W" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
+    <a href="https://search.naver.com/search.naver?query=%EC%B9%B4%ED%8E%98%EC%9D%B4%EB%A5%B4%EB%A6%AC%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=%EC%B9%B4%ED%8E%98%EC%9D%B4%EB%A5%B4%EB%A6%AC%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <a href="tel:063-231-1528" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%EC%9D%B4%EB%A5%B4%EB%A6%AC%20%EC%9D%80%ED%96%89%EB%A1%9C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=%EC%B9%B4%ED%8E%98%EC%9D%B4%EB%A5%B4%EB%A6%AC" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
     <div class="tip"><span class="tipic">🏠</span><div class="tiptx"><strong>스테이 윤슬 체크아웃 11:00</strong> · 짐 보관 후 관광 가능 🧳<br>오후 3시 버스로 귀가! 즐거운 1박2일 마무리 😊</div></div>
@@ -3994,10 +3826,10 @@ a,button{-webkit-tap-highlight-color:transparent;}
   </div>
   <div style="display:flex;gap:5px;">
     <a href="https://naver.me/Fw7iuLPx" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%ED%96%89%EC%9B%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%ED%96%89%EC%9B%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
+    <a href="https://search.naver.com/search.naver?query=%EC%A0%84%EC%A3%BC%EC%B9%B4%ED%8E%98%ED%96%89%EC%9B%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
+    <a href="https://www.google.com/search?q=%EC%A0%84%EC%A3%BC%EC%B9%B4%ED%8E%98%ED%96%89%EC%9B%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
     <a href="tel:063-284-6566" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%ED%96%89%EC%9B%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
+    <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%EC%B9%B4%ED%8E%98%ED%96%89%EC%9B%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
 <div class="pc pc-senior-rec" data-lat="35.8158" data-lng="127.151" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
@@ -5743,181 +5575,80 @@ window.resetLocationPrefs = function() {
 };</script>
 
 
-<!-- ═════════════════════════════════════════ -->
-<!-- PWA: 환영 페이지 + 설정 + Service Worker -->
-<!-- ═════════════════════════════════════════ -->
 <script>
 (function(){
   'use strict';
   const STORAGE_KEY = 'jeonju_friend_names';
-  
-  // 헤더에 친구 이름 적용
   function applyNamesToHeader(names) {
     const el = document.getElementById('friend-names');
     if (!el) return;
     const valid = names.filter(n => n && n.trim());
-    if (valid.length > 0) {
-      el.textContent = valid.join('·');
-      el.style.display = 'block';
-    } else {
-      // 이름 없으면 숨김
-      el.style.display = 'none';
-    }
+    if (valid.length > 0) { el.textContent = valid.join('·'); el.style.display = 'block'; }
+    else { el.style.display = 'none'; }
   }
-  
-  // localStorage에서 저장된 이름 불러오기
   function loadNames() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return null;
-      const arr = JSON.parse(raw);
-      if (Array.isArray(arr) && arr.length === 5) return arr;
-    } catch(e) { 
-      console.warn('loadNames error:', e); 
-    }
-    return null;
+    try { const raw = localStorage.getItem(STORAGE_KEY); if (!raw) return null;
+      const arr = JSON.parse(raw); if (Array.isArray(arr) && arr.length === 5) return arr;
+    } catch(e) { console.warn(e); } return null;
   }
-  
-  // localStorage에 이름 저장
   function saveNames(arr) {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-      return true;
-    } catch(e) {
-      console.error('saveNames error:', e);
-      alert('저장에 실패했습니다. 브라우저 설정을 확인해주세요.');
-      return false;
-    }
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); return true; }
+    catch(e) { alert('저장 실패'); return false; }
   }
-  
-  // 앱 초기화: 환영 페이지 표시 여부 결정
   function initApp() {
     const saved = loadNames();
     const welcomeEl = document.getElementById('welcome-overlay');
-    
     if (saved && saved.some(n => n && n.trim())) {
-      // 이미 입력된 이름 있음 → 환영 페이지 숨김 + 헤더에 적용
       welcomeEl.classList.add('hidden');
       applyNamesToHeader(saved);
     } else {
-      // 첫 방문 → 환영 페이지 표시
       welcomeEl.classList.remove('hidden');
-      // 첫 번째 입력칸 포커스
-      setTimeout(() => {
-        const firstInput = document.getElementById('name-1');
-        if (firstInput) firstInput.focus();
-      }, 300);
+      setTimeout(() => { const f = document.getElementById('name-1'); if (f) f.focus(); }, 300);
     }
   }
-  
-  // [환영 페이지] 시작하기 버튼
   window.saveFriendNames = function() {
     const names = [];
-    for (let i = 1; i <= 5; i++) {
-      const v = document.getElementById('name-' + i).value.trim();
-      names.push(v);
-    }
-    
-    const filled = names.filter(n => n).length;
-    if (filled === 0) {
-      alert('친구 이름을 한 명 이상 입력해주세요.');
-      return;
-    }
-    
-    if (saveNames(names)) {
-      applyNamesToHeader(names);
-      document.getElementById('welcome-overlay').classList.add('hidden');
-    }
+    for (let i = 1; i <= 5; i++) names.push(document.getElementById('name-'+i).value.trim());
+    if (names.filter(n => n).length === 0) { alert('친구 이름을 한 명 이상 입력해주세요.'); return; }
+    if (saveNames(names)) { applyNamesToHeader(names); document.getElementById('welcome-overlay').classList.add('hidden'); }
   };
-  
-  // [설정] 열기
   window.openSettings = function() {
     const saved = loadNames() || ['','','','',''];
-    for (let i = 1; i <= 5; i++) {
-      document.getElementById('edit-name-' + i).value = saved[i-1] || '';
-    }
+    for (let i = 1; i <= 5; i++) document.getElementById('edit-name-'+i).value = saved[i-1] || '';
     document.getElementById('settings-overlay').classList.add('visible');
   };
-  
-  // [설정] 닫기
-  window.closeSettings = function() {
-    document.getElementById('settings-overlay').classList.remove('visible');
-  };
-  
-  // [설정] 저장
+  window.closeSettings = function() { document.getElementById('settings-overlay').classList.remove('visible'); };
   window.updateFriendNames = function() {
     const names = [];
-    for (let i = 1; i <= 5; i++) {
-      names.push(document.getElementById('edit-name-' + i).value.trim());
-    }
-    const filled = names.filter(n => n).length;
-    if (filled === 0) {
-      alert('최소 한 명의 이름을 입력해주세요.');
-      return;
-    }
-    if (saveNames(names)) {
-      applyNamesToHeader(names);
-      closeSettings();
-    }
+    for (let i = 1; i <= 5; i++) names.push(document.getElementById('edit-name-'+i).value.trim());
+    if (names.filter(n => n).length === 0) { alert('최소 한 명의 이름을 입력해주세요.'); return; }
+    if (saveNames(names)) { applyNamesToHeader(names); closeSettings(); }
   };
-  
-  // 설정 오버레이 배경 클릭 → 닫기
   document.getElementById('settings-overlay').addEventListener('click', function(e) {
     if (e.target.id === 'settings-overlay') closeSettings();
   });
-  
-  // 환영 페이지: Enter 키로 다음 입력칸 이동
   for (let i = 1; i <= 5; i++) {
-    const el = document.getElementById('name-' + i);
-    if (el) {
-      el.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          if (i < 5) {
-            document.getElementById('name-' + (i+1)).focus();
-          } else {
-            saveFriendNames();
-          }
-        }
-      });
-    }
+    const el = document.getElementById('name-'+i);
+    if (el) el.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault();
+        if (i < 5) document.getElementById('name-'+(i+1)).focus(); else saveFriendNames();
+      }
+    });
+    const el2 = document.getElementById('edit-name-'+i);
+    if (el2) el2.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') { e.preventDefault();
+        if (i < 5) document.getElementById('edit-name-'+(i+1)).focus(); else updateFriendNames();
+      }
+    });
   }
-  
-  // 설정 페이지: Enter 키로 다음 칸 이동
-  for (let i = 1; i <= 5; i++) {
-    const el = document.getElementById('edit-name-' + i);
-    if (el) {
-      el.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          if (i < 5) {
-            document.getElementById('edit-name-' + (i+1)).focus();
-          } else {
-            updateFriendNames();
-          }
-        }
-      });
-    }
-  }
-  
-  // DOM 로드 후 초기화
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initApp);
-  } else {
-    initApp();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initApp);
+  else initApp();
 })();
-
-// Service Worker 등록 (PWA 핵심)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('service-worker.js')
-      .then(function(reg) { 
-        console.log('[PWA] Service Worker 등록됨:', reg.scope); 
-      })
-      .catch(function(err) { 
-        console.warn('[PWA] Service Worker 등록 실패:', err); 
-      });
+      .then(reg => console.log('[PWA] SW 등록됨:', reg.scope))
+      .catch(err => console.warn('[PWA] SW 등록 실패:', err));
   });
 }
 </script>
