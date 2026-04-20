@@ -4954,7 +4954,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
         <div class="wspot" style="color:#0288D1;">📍 주요 경유지</div>
         <div class="wroute" style="border-left-color:#29B6F6;">관광안내소(주차장) → 경기전 → 전동성당 → 태조로 → 전주공예품전시관 → 오목대 → 전주전통문화연수원 → 전주향교</div>
         <div style="font-size:11px;color:#0288D1;margin-bottom:10px;padding:6px 10px;background:#E1F5FE;border-radius:8px;">♿ 휠체어·유모차 이동 가능한 무장애 코스</div>
-        <a class="wbtn" href="https://map.naver.com/p/search/전주%20한옥마을%20관광안내소" target="_blank" style="background:linear-gradient(135deg,#0288D1,#0277BD);">🗺 출발지 네이버지도</a>
+        <button class="wbtn" onclick="walkCourse2()" type="button" style="background:linear-gradient(135deg,#0288D1,#0277BD);;border:none;cursor:pointer;width:100%;font-family:inherit;-webkit-tap-highlight-color:transparent;">🗺 현재 위치 → 전체 코스 경로 (도보)</button>
       </div>
     </div>
 
@@ -4973,7 +4973,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
         <div class="wspot" style="color:#F57F17;">📍 주요 경유지</div>
         <div class="wroute" style="border-left-color:#FFB300;">오목대관광안내소 → 전통한지원 → 인지길 → 승광재 골목 → 인지길 → 김치체험관 골목길 → 600년 은행나무 → 은행로 → 최명희길 → 경기전</div>
         <div style="font-size:11px;color:#E65100;margin-bottom:10px;padding:6px 10px;background:#FFF8E1;border-radius:8px;">⚡ 30분 단시간 핵심 코스 · 골목 감성 최고!</div>
-        <a class="wbtn" href="https://map.naver.com/p/search/전주%20오목대" target="_blank" style="background:linear-gradient(135deg,#F57F17,#E65100);">🗺 출발지 네이버지도</a>
+        <button class="wbtn" onclick="walkCourse3()" type="button" style="background:linear-gradient(135deg,#F57F17,#E65100);;border:none;cursor:pointer;width:100%;font-family:inherit;-webkit-tap-highlight-color:transparent;">🗺 현재 위치 → 전체 코스 경로 (도보)</button>
       </div>
     </div>
 
@@ -4991,7 +4991,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
         </div>
         <div class="wspot" style="color:var(--pur);">📍 주요 경유지</div>
         <div class="wroute" style="border-left-color:var(--pur);">600년 은행나무 → 오목대 → 이목대 → 창암 암각서 → 한벽당 → 한벽문화관 → 완판본문화관 → 강암서예관 → 양사재 → 남안재 → 전주전통문화연수원(동연) → 전주향교</div>
-        <a class="wbtn" href="https://map.naver.com/p/search/전주%20600년%20은행나무" target="_blank" style="background:linear-gradient(135deg,var(--pur),#6A1B9A);">🗺 출발지 네이버지도</a>
+        <button class="wbtn" onclick="walkCourse4()" type="button" style="background:linear-gradient(135deg,var(--pur),#6A1B9A);;border:none;cursor:pointer;width:100%;font-family:inherit;-webkit-tap-highlight-color:transparent;">🗺 현재 위치 → 전체 코스 경로 (도보)</button>
       </div>
     </div>
 
@@ -5010,7 +5010,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
         <div class="wspot" style="color:#00695C;">📍 주요 경유지</div>
         <div class="wroute" style="border-left-color:#26A69A;">전주공예품전시관 → 당산나무 → 전주전통문화연수원(동연) → 양길 → 전주전생태탐방로 → 승암산(치명자산) → 바람쐬러가는길 → 각시바위 → 한벽굴 → 자만벽화마을 → 이목대 → 오목대</div>
         <div style="font-size:11px;color:#00695C;margin-bottom:10px;padding:6px 10px;background:#E0F2F1;border-radius:8px;">🌿 자연 속 힐링 코스 · 자만벽화마을 포함</div>
-        <a class="wbtn" href="https://map.naver.com/p/search/전주공예품전시관" target="_blank" style="background:linear-gradient(135deg,#00695C,#004D40);">🗺 출발지 네이버지도</a>
+        <button class="wbtn" onclick="walkCourse5()" type="button" style="background:linear-gradient(135deg,#00695C,#004D40);;border:none;cursor:pointer;width:100%;font-family:inherit;-webkit-tap-highlight-color:transparent;">🗺 현재 위치 → 전체 코스 경로 (도보)</button>
       </div>
     </div>
 
@@ -5484,32 +5484,21 @@ window.walkToStay = function() {
   );
 };
 
-// ═══ 코스 1: 한옥마을 한 바퀴 (네이버 지도 앱 도보 경로) ═══
-window.walkCourse1 = function() {
+// ═══ 걷기 코스 경로 안내 (네이버 지도 앱 도보 길찾기) ═══
+// 공통 함수: 캐시된 위치 확인 → 네이버 앱 호출
+function openNaverWalkRoute(waypoints, dest) {
   const CACHE_MAX_AGE = 24 * 60 * 60 * 1000;
   
-  // 코스 1 대표 경유지 (출발지 제외, 도착지 포함 최대 5개)
-  // 네이버 지도 앱 URL Scheme: slat/slng(출발), dlat/dlng(도착), v1~v5(경유지)
-  const WAYPOINTS = [
-    { name: '경기전',     lat: 35.8147, lng: 127.1484 },
-    { name: '전동성당',   lat: 35.8144, lng: 127.1464 },
-    { name: '오목대',     lat: 35.8160, lng: 127.1511 },
-    { name: '전주향교',   lat: 35.8157, lng: 127.1537 }
-  ];
-  const DEST = { name: '한벽당', lat: 35.8120, lng: 127.1490 };
-  
-  // 네이버 지도 앱 딥링크 생성 및 실행
-  const openNaverMapApp = (userLat, userLng) => {
+  const buildAndOpen = (userLat, userLng) => {
     const params = [
       `slat=${userLat}`,
       `slng=${userLng}`,
       `sname=${encodeURIComponent('내위치')}`,
-      `dlat=${DEST.lat}`,
-      `dlng=${DEST.lng}`,
-      `dname=${encodeURIComponent(DEST.name)}`,
+      `dlat=${dest.lat}`,
+      `dlng=${dest.lng}`,
+      `dname=${encodeURIComponent(dest.name)}`,
     ];
-    // 경유지 추가 (v1~v5)
-    WAYPOINTS.forEach((w, idx) => {
+    waypoints.forEach((w, idx) => {
       const n = idx + 1;
       params.push(`v${n}lat=${w.lat}`);
       params.push(`v${n}lng=${w.lng}`);
@@ -5518,22 +5507,22 @@ window.walkCourse1 = function() {
     params.push('appname=com.jeonju.travel');
     
     const url = 'nmap://route/walk?' + params.join('&');
-    console.log('[walkCourse1] 네이버 앱 호출:', url);
+    console.log('[walkCourse] 네이버 앱 호출');
     window.location.href = url;
   };
   
-  // 1. 캐시된 위치 확인
+  // 1. 캐시 확인
   try {
     const cached = localStorage.getItem('jeonju_userLoc');
     if (cached) {
       const data = JSON.parse(cached);
       const age = Date.now() - (data.ts || 0);
       if (data.lat && data.lng && age < CACHE_MAX_AGE) {
-        openNaverMapApp(data.lat, data.lng);
+        buildAndOpen(data.lat, data.lng);
         return;
       }
     }
-  } catch(e) { console.warn('[walkCourse1] 캐시 오류:', e); }
+  } catch(e) { console.warn('[walkCourse] 캐시 오류:', e); }
   
   // 2. 위치 권한 요청
   if (!navigator.geolocation) {
@@ -5555,7 +5544,7 @@ window.walkCourse1 = function() {
         lat: latitude, lng: longitude, ts: Date.now()
       }));
       document.body.removeChild(statusDiv);
-      openNaverMapApp(latitude, longitude);
+      buildAndOpen(latitude, longitude);
     },
     err => {
       document.body.removeChild(statusDiv);
@@ -5574,7 +5563,73 @@ window.walkCourse1 = function() {
     },
     { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
   );
+}
+
+// 코스 1: 한옥마을 한 바퀴 여행길
+window.walkCourse1 = function() {
+  openNaverWalkRoute(
+    [
+      { name: '경기전',   lat: 35.8147, lng: 127.1484 },
+      { name: '전동성당', lat: 35.8144, lng: 127.1464 },
+      { name: '오목대',   lat: 35.8160, lng: 127.1511 },
+      { name: '전주향교', lat: 35.8157, lng: 127.1537 }
+    ],
+    { name: '한벽당', lat: 35.8120, lng: 127.1490 }
+  );
 };
+
+// 코스 2: 열린 여행길 / 무장애 여행길
+window.walkCourse2 = function() {
+  openNaverWalkRoute(
+    [
+      { name: '경기전',             lat: 35.8147, lng: 127.1484 },
+      { name: '전동성당',           lat: 35.8144, lng: 127.1464 },
+      { name: '전주공예품전시관',   lat: 35.8149, lng: 127.1494 },
+      { name: '오목대',             lat: 35.8160, lng: 127.1511 }
+    ],
+    { name: '전주향교', lat: 35.8157, lng: 127.1537 }
+  );
+};
+
+// 코스 3: 전주 한옥마을 골목길
+window.walkCourse3 = function() {
+  openNaverWalkRoute(
+    [
+      { name: '전주한지원',         lat: 35.8155, lng: 127.1502 },
+      { name: '승광재',             lat: 35.8156, lng: 127.1490 },
+      { name: '600년 은행나무',     lat: 35.8152, lng: 127.1489 },
+      { name: '최명희문학관',       lat: 35.8150, lng: 127.1485 }
+    ],
+    { name: '경기전', lat: 35.8147, lng: 127.1484 }
+  );
+};
+
+// 코스 4: 사드락 선비 길
+window.walkCourse4 = function() {
+  openNaverWalkRoute(
+    [
+      { name: '오목대',       lat: 35.8160, lng: 127.1511 },
+      { name: '이목대',       lat: 35.8165, lng: 127.1525 },
+      { name: '한벽당',       lat: 35.8120, lng: 127.1490 },
+      { name: '완판본문화관', lat: 35.8127, lng: 127.1522 }
+    ],
+    { name: '전주향교', lat: 35.8157, lng: 127.1537 }
+  );
+};
+
+// 코스 5: 한옥마을 둘레길 / 숨길 코스
+window.walkCourse5 = function() {
+  openNaverWalkRoute(
+    [
+      { name: '당산나무',       lat: 35.8158, lng: 127.1500 },
+      { name: '치명자산',       lat: 35.8097, lng: 127.1580 },
+      { name: '한벽굴',         lat: 35.8097, lng: 127.1598 },
+      { name: '자만벽화마을',   lat: 35.8170, lng: 127.1535 }
+    ],
+    { name: '오목대', lat: 35.8160, lng: 127.1511 }
+  );
+};
+
 
 
 
