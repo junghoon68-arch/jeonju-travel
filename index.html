@@ -123,15 +123,18 @@ body{font-family:'Noto Sans KR',sans-serif;background:#FFF9F8;color:#4A4A4A;min-
 
 /* ── QUICK TIPS ── */
 .qtip-row{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:10px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
   padding:0 16px 16px;
 }
 .qtip-row::-webkit-scrollbar{display:none;}
 .qtip{
-  background:#fff;border-radius:14px;padding:12px 14px;
+  background:#fff;border-radius:14px;padding:10px 6px;
   box-shadow:0 3px 14px rgba(226,114,91,.1);
   border:none;cursor:pointer;transition:transform .15s;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  text-align:center;
 }
+.qtip:active{transform:scale(.95);}
 .qtip:active{transform:scale(.97);}
 .qtip-header{
   display:flex;align-items:center;gap:8px;margin-bottom:6px;
@@ -145,14 +148,15 @@ body{font-family:'Noto Sans KR',sans-serif;background:#FFF9F8;color:#4A4A4A;min-
   display:flex;align-items:center;gap:8px;margin-bottom:6px;
 }
 .qtip-icon{
-  font-size:19px;width:32px;height:32px;border-radius:10px;
+  font-size:26px;width:44px;height:44px;border-radius:12px;
   background:#FFF3E0;display:flex;align-items:center;justify-content:center;
   flex-shrink:0;margin-bottom:0;
 }
 .qtip-title{
-  font-size:13px;font-weight:700;color:var(--bd);
-  flex:1;line-height:1.2;margin-bottom:0;
+  font-size:12px;font-weight:700;color:var(--bd);
+  line-height:1.2;margin-bottom:0;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  max-width:100%;
 }
 .qtip-desc{
   font-size:11px;color:var(--gray);line-height:1.5;
@@ -1078,44 +1082,28 @@ a,button{-webkit-tap-highlight-color:transparent;}
   <div class="sec-title" style="font-family:'Noto Serif KR',serif;">✨ 꼭 가봐요!</div>
   <div class="qtip-row">
     <div class="qtip" onclick="window.open('https://naver.me/GFB1bjma','_blank')">
-      <div class="qtip-header"><div class="qtip-icon">🌸</div><div class="qtip-title">공간 봄</div></div>
-      <div class="qtip-desc">라이브 공연 + 한옥 야경</div>
-      <div class="qtip-btns" onclick="event.stopPropagation()">
-        <a href="https://naver.me/GFB1bjma" target="_blank" class="qtip-btn qtip-btn-map" aria-label="지도">📍</a>
-        <a href="https://search.naver.com/search.naver?query=%EA%B3%B5%EA%B0%84%EB%B4%84%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-nrev" aria-label="N리뷰">📋</a>
-        <a href="https://www.google.com/search?q=%EA%B3%B5%EA%B0%84%EB%B4%84%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-grev" aria-label="G리뷰">⭐</a>
-        <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%20%EA%B3%B5%EA%B0%84%EB%B4%84" target="_blank" class="qtip-btn qtip-btn-photo" aria-label="사진">🖼</a>
-      </div>
+      <div class="qtip-icon">🌸</div>
+      <div class="qtip-title">공간 봄</div>
     </div>
-    <div class="qtip" onclick="window.open('https://naver.me/xf5AihEc','_blank')">
-      <div class="qtip-header"><div class="qtip-icon">🍫</div><div class="qtip-title">PNB 풍년제과</div></div>
-      <div class="qtip-desc">전주 초코파이 원조 · 선물용</div>
-      <div class="qtip-btns" onclick="event.stopPropagation()">
-        <a href="https://naver.me/xf5AihEc" target="_blank" class="qtip-btn qtip-btn-map" aria-label="지도">📍</a>
-        <a href="https://search.naver.com/search.naver?query=PNB%20%ED%92%8D%EB%85%84%EC%A0%9C%EA%B3%BC%20%EB%B3%B8%EC%A0%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-nrev" aria-label="N리뷰">📋</a>
-        <a href="https://www.google.com/search?q=PNB%20%ED%92%8D%EB%85%84%EC%A0%9C%EA%B3%BC%20%EB%B3%B8%EC%A0%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-grev" aria-label="G리뷰">⭐</a>
-        <a href="https://search.naver.com/search.naver?where=image&query=PNB%20%ED%92%8D%EB%85%84%EC%A0%9C%EA%B3%BC%20%EB%B3%B8%EC%A0%90" target="_blank" class="qtip-btn qtip-btn-photo" aria-label="사진">🖼</a>
-      </div>
+    <div class="qtip" onclick="window.open('https://naver.me/FvEgdD00','_blank')">
+      <div class="qtip-icon">🏯</div>
+      <div class="qtip-title">기와</div>
+    </div>
+    <div class="qtip" onclick="window.open('https://naver.me/xl0DnkxJ','_blank')">
+      <div class="qtip-icon">🍖</div>
+      <div class="qtip-title">꽃담</div>
+    </div>
+    <div class="qtip" onclick="window.open('https://naver.me/GgWkFEuT','_blank')">
+      <div class="qtip-icon">🍲</div>
+      <div class="qtip-title">교동시래청</div>
     </div>
     <div class="qtip" onclick="window.open('https://naver.me/GSDALigH','_blank')">
-      <div class="qtip-header"><div class="qtip-icon">🐻</div><div class="qtip-title">카카오프렌즈</div></div>
-      <div class="qtip-desc">전주 한정판 굿즈</div>
-      <div class="qtip-btns" onclick="event.stopPropagation()">
-        <a href="https://naver.me/GSDALigH" target="_blank" class="qtip-btn qtip-btn-map" aria-label="지도">📍</a>
-        <a href="https://search.naver.com/search.naver?query=%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88%20%EC%A0%84%EC%A3%BC%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EC%A0%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-nrev" aria-label="N리뷰">📋</a>
-        <a href="https://www.google.com/search?q=%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88%20%EC%A0%84%EC%A3%BC%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EC%A0%90%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-grev" aria-label="G리뷰">⭐</a>
-        <a href="https://search.naver.com/search.naver?where=image&query=%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%94%84%EB%A0%8C%EC%A6%88%20%EC%A0%84%EC%A3%BC%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EC%A0%90" target="_blank" class="qtip-btn qtip-btn-photo" aria-label="사진">🖼</a>
-      </div>
+      <div class="qtip-icon">🐻</div>
+      <div class="qtip-title">카카오프렌즈</div>
     </div>
     <div class="qtip" onclick="window.open('https://naver.me/5l74Wzwd','_blank')">
-      <div class="qtip-header"><div class="qtip-icon">🎵</div><div class="qtip-title">청년몰 야시장</div></div>
-      <div class="qtip-desc">금·토 저녁 버스킹 공연</div>
-      <div class="qtip-btns" onclick="event.stopPropagation()">
-        <a href="https://naver.me/5l74Wzwd" target="_blank" class="qtip-btn qtip-btn-map" aria-label="지도">📍</a>
-        <a href="https://search.naver.com/search.naver?query=%EB%82%A8%EB%B6%80%EC%8B%9C%EC%9E%A5%EC%B2%AD%EB%85%84%EB%AA%B0%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-nrev" aria-label="N리뷰">📋</a>
-        <a href="https://www.google.com/search?q=%EB%82%A8%EB%B6%80%EC%8B%9C%EC%9E%A5%EC%B2%AD%EB%85%84%EB%AA%B0%20%EB%A6%AC%EB%B7%B0" target="_blank" class="qtip-btn qtip-btn-grev" aria-label="G리뷰">⭐</a>
-        <a href="https://search.naver.com/search.naver?where=image&query=%EB%82%A8%EB%B6%80%EC%8B%9C%EC%9E%A5%EC%B2%AD%EB%85%84%EB%AA%B0" target="_blank" class="qtip-btn qtip-btn-photo" aria-label="사진">🖼</a>
-      </div>
+      <div class="qtip-icon">🎵</div>
+      <div class="qtip-title">청년몰 야시장</div>
     </div>
   </div>
   <div style="height:8px;"></div>
@@ -3190,7 +3178,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
 
 </div>
 <div style="padding:12px 14px 16px;">
-<div class="pc pc-senior-rec" data-lat="35.8171" data-lng="127.1476" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+<div class="pc" data-lat="35.8171" data-lng="127.1476" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFCDD2;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍗</div>
     <div style="flex:1;min-width:0;">
@@ -3219,7 +3207,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%98%81%EB%8F%99%EC%8A%88%ED%8D%BC%EB%8B%AD%EB%B0%9C%20%EB%B3%B8%EC%A0%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.8172" data-lng="127.1474" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc pc-senior-rec" data-lat="35.8172" data-lng="127.1474" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFE0B2;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍺</div>
     <div style="flex:1;min-width:0;">
@@ -3248,7 +3237,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%9D%BC%EA%B0%91%EC%98%A4" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.817" data-lng="127.1475" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.817" data-lng="127.1475" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#F3E5F5;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🦑</div>
     <div style="flex:1;min-width:0;">
@@ -3276,7 +3266,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="tel:063-284-4234" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
     <a href="https://search.naver.com/search.naver?where=image&query=%EA%B2%BD%EC%9B%90%EC%83%81%ED%9A%8C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8161" data-lng="127.1486" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8161" data-lng="127.1486" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFF8E1;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍺</div>
     <div style="flex:1;min-width:0;">
@@ -3304,6 +3296,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%9E%84%EC%8B%A4%EC%8A%88%ED%8D%BC" target="_blank" class="pc-btn" style="flex:1;background:#FF6B6B;color:#fff;">🖼 사진</a>
   </div>
 </div>
+
       <div class="pc pc-highlight pc-senior-rec" data-lat="35.8168" data-lng="127.148" style="background:#fff;border-radius:16px;margin:20px 0 18px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#E8F5E9;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🐟</div>
@@ -3332,35 +3325,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;" title="번호 확인 필요">📞</span>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%B4%88%EC%9B%90%ED%8E%B8%EC%9D%98%EC%A0%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div>      <div class="pc" data-lat="35.8175" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
-  <div style="display:flex;gap:12px;margin-bottom:10px;">
-    <div style="width:54px;height:54px;border-radius:12px;background:#FFF8E1;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍺</div>
-    <div style="flex:1;min-width:0;">
-      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;">
-        <div style="flex:1;min-width:0;">
-          <div style="font-size:16px;font-weight:700;color:#3D1A2A;line-height:1.3;">임실슈퍼</div>
-          <div style="font-size:12px;color:#888;margin-top:2px;line-height:1.4;">촉촉한 갑오징어와 맥주의 환상 조합</div>
-        </div>
-        <div style="text-align:right;flex-shrink:0;">
-          <div style="font-size:18px;font-weight:700;color:#E2725B;line-height:1;">🍺</div>
-          <div style="font-size:10px;color:#888;margin-top:4px;">가맥</div>
-        </div>
-      </div>
-      <div style="margin-top:8px;"><span style="background:#FCE4EC;color:#C2185B;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;margin-right:4px;">가맥</span></div>
-    </div>
-  </div>
-  <div style="display:flex;gap:12px;margin-bottom:12px;font-size:12px;color:#666;flex-wrap:wrap;align-items:center;"><span class="dist-display" style="color:#E2725B;font-weight:700;display:none;">📍 --</span>
-    <span>🕐 저녁~밤</span>
-  </div>
-  <div style="display:flex;gap:5px;">
-    <a href="https://naver.me/FFG6V0C5" target="_blank" class="pc-btn" style="flex:1;background:#03C75A;color:#fff;">📍 지도</a>
-    <a href="https://search.naver.com/search.naver?query=%EC%9E%84%EC%8B%A4%EC%8A%88%ED%8D%BC%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#E8F5E9;color:#1B5E20;">📋 N리뷰</a>
-    <a href="https://www.google.com/search?q=%EC%9E%84%EC%8B%A4%EC%8A%88%ED%8D%BC%20%EB%A6%AC%EB%B7%B0" target="_blank" class="pc-btn" style="flex:1;background:#FFF9E5;color:#D48806;">⭐ G리뷰</a>
-    <a href="https://search.naver.com/search.naver?where=image&query=%EC%9E%84%EC%8B%A4%EC%8A%88%ED%8D%BC" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
-  </div>
 </div>
 
-            <div class="pc" data-lat="35.8175" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+      <div class="pc" data-lat="35.8175" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFF8E1;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍺</div>
     <div style="flex:1;min-width:0;">
@@ -3388,7 +3355,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
   </div>
 </div>
 
-            <div class="pc" data-lat="35.8175" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+      <div class="pc" data-lat="35.8175" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFF8E1;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍺</div>
     <div style="flex:1;min-width:0;">
@@ -3443,7 +3410,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
   </div>
 
   <div style="padding:12px 14px 16px;">
-<div class="pc pc-senior-rec" data-lat="35.8152" data-lng="127.1496" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+<div class="pc" data-lat="35.8152" data-lng="127.1496" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#EFEBE9;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🎎</div>
     <div style="flex:1;min-width:0;">
@@ -3472,7 +3439,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EB%B0%95%EA%B8%88%EC%88%99%EB%8B%A5%EC%A2%85%EC%9D%B4%EC%9D%B8%ED%98%95%EC%97%B0%EA%B5%AC%EC%86%8C" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.8149" data-lng="127.1493" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8149" data-lng="127.1493" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#E0F2F1;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">📜</div>
     <div style="flex:1;min-width:0;">
@@ -3501,7 +3469,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%ED%95%9C%EC%A7%80%20%ED%96%89%EB%B3%B5%ED%95%9C%EA%B3%B5%EC%98%88%EB%B0%A9" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.8158" data-lng="127.151" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8158" data-lng="127.151" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#B2DFDB;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🏺</div>
     <div style="flex:1;min-width:0;">
@@ -3530,7 +3499,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EA%B5%AD%EC%A0%84%ED%86%B5%EB%AC%B8%ED%99%94%EC%A0%84%EB%8B%B9" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-    <div class="pc" data-lat="35.8146" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8146" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FCE4EC;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">👘</div>
     <div style="flex:1;min-width:0;">
@@ -3558,7 +3528,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;">📞</span>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%20%ED%95%9C%EB%B3%B5%EB%8C%80%EC%97%AC%20%EC%83%89%EB%8F%99%EC%A0%80%EA%B3%A0%EB%A6%AC" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8145" data-lng="127.1487" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8145" data-lng="127.1487" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#F3E5F5;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🌸</div>
     <div style="flex:1;min-width:0;">
@@ -3586,7 +3558,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;">📞</span>
     <a href="https://search.naver.com/search.naver?where=image&query=%EB%B9%84%EB%B9%94%ED%95%9C%EB%B3%B5%20%EC%A0%84%EC%A3%BC%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EC%A0%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8155" data-lng="127.1502" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8155" data-lng="127.1502" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFE0B2;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">📄</div>
     <div style="flex:1;min-width:0;">
@@ -3614,7 +3588,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="tel:063-231-0010" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
     <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EC%A7%80%EC%82%B0%EC%97%85%EC%A7%80%EC%9B%90%EC%84%BC%ED%84%B0" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8146" data-lng="127.1489" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8146" data-lng="127.1489" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#F3E5F5;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">👘</div>
     <div style="flex:1;min-width:0;">
@@ -3642,7 +3618,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;">📞</span>
     <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EB%B3%B5%EB%82%A8%20%EC%A0%84%EC%A3%BC%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84%EC%A0%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8155" data-lng="127.1508" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8155" data-lng="127.1508" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFE0B2;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍶</div>
     <div style="flex:1;min-width:0;">
@@ -3905,7 +3883,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
   </div>
 
   <div style="padding:12px 14px 16px;">
-<div class="pc pc-senior-rec" data-lat="35.8141" data-lng="127.1481" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+<div class="pc" data-lat="35.8141" data-lng="127.1481" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#EFEBE9;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🍵</div>
     <div style="flex:1;min-width:0;">
@@ -3934,7 +3912,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%EC%B9%B4%ED%8E%98%ED%96%89%EC%9B%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.8158" data-lng="127.151" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8158" data-lng="127.151" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#B2DFDB;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🏺</div>
     <div style="flex:1;min-width:0;">
@@ -3963,7 +3942,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EA%B5%AD%EC%A0%84%ED%86%B5%EB%AC%B8%ED%99%94%EC%A0%84%EB%8B%B9" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.8147" data-lng="127.1486" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8147" data-lng="127.1486" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFF3E0;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🏯</div>
     <div style="flex:1;min-width:0;">
@@ -3992,7 +3972,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%A0%84" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-    <div class="pc" data-lat="35.8146" data-lng="127.1484" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8146" data-lng="127.1484" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#E8EAF6;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🖼</div>
     <div style="flex:1;min-width:0;">
@@ -4020,7 +4001,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="tel:063-231-0090" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%96%B4%EC%A7%84%EB%B0%95%EB%AC%BC%EA%B4%80" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8153" data-lng="127.1495" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8153" data-lng="127.1495" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#E0F2F1;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🏺</div>
     <div style="flex:1;min-width:0;">
@@ -4048,7 +4031,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="tel:063-285-4351" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%EA%B3%B5%EC%98%88%ED%92%88%EC%A0%84%EC%8B%9C%EA%B4%80" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8155" data-lng="127.1502" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8155" data-lng="127.1502" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FFE0B2;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">📄</div>
     <div style="flex:1;min-width:0;">
@@ -4076,7 +4061,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="tel:063-231-0010" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
     <a href="https://search.naver.com/search.naver?where=image&query=%ED%95%9C%EC%A7%80%EC%82%B0%EC%97%85%EC%A7%80%EC%9B%90%EC%84%BC%ED%84%B0" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8146" data-lng="127.148" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8146" data-lng="127.148" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#B2DFDB;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">☕</div>
     <div style="flex:1;min-width:0;">
@@ -4160,7 +4147,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EB%9D%BC%EA%B0%90%EC%98%81%20%EC%95%BC%EA%B2%BD" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.8162" data-lng="127.1505" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8162" data-lng="127.1505" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#F1F8E9;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">📜</div>
     <div style="flex:1;min-width:0;">
@@ -4189,7 +4177,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%ED%96%A5%EA%B5%90" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-<div class="pc pc-senior-rec" data-lat="35.8149" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8149" data-lng="127.1488" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#E8F5E9;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🎋</div>
     <div style="flex:1;min-width:0;">
@@ -4217,7 +4206,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;" title="번호 확인 필요">📞</span>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EC%A3%BC%EA%B2%BD%EA%B8%B0%EC%A0%84" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8144" data-lng="127.1464" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8144" data-lng="127.1464" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#EDE7F6;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">⛪</div>
     <div style="flex:1;min-width:0;">
@@ -4246,7 +4237,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="tel:063-284-3222" class="pc-btn" style="background:#FCE4EC;color:#C2185B;">📞</a>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%A0%84%EB%8F%99%EC%84%B1%EB%8B%B9" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.8175" data-lng="127.1522" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.8175" data-lng="127.1522" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#C8E6C9;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🎨</div>
     <div style="flex:1;min-width:0;">
@@ -4274,7 +4267,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;">📞</span>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%9E%90%EB%A7%8C%EB%B2%BD%ED%99%94%EB%A7%88%EC%9D%84" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.816" data-lng="127.1511" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.816" data-lng="127.1511" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#EFEBE9;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🏔</div>
     <div style="flex:1;min-width:0;">
@@ -4302,7 +4297,9 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <span class="pc-btn" style="background:#F5F5F5;color:#BBB;cursor:default;">📞</span>
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%98%A4%EB%AA%A9%EB%8C%80" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
-</div><div class="pc" data-lat="35.812" data-lng="127.153" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+</div>
+
+      <div class="pc" data-lat="35.812" data-lng="127.153" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#FCE4EC;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">📺</div>
     <div style="flex:1;min-width:0;">
@@ -4331,7 +4328,8 @@ a,button{-webkit-tap-highlight-color:transparent;}
     <a href="https://search.naver.com/search.naver?where=image&query=%EC%9D%B4%EC%98%A4%EC%9D%B4%EC%9D%BC" target="_blank" class="pc-btn" style="background:#FFE8DC;color:#BF5F3A;">🖼 사진</a>
   </div>
 </div>
-        <div class="pc" data-lat="35.8097" data-lng="127.1598" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+
+      <div class="pc" data-lat="35.8097" data-lng="127.1598" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#EDE7F6;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🚇</div>
     <div style="flex:1;min-width:0;">
@@ -4359,7 +4357,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
   </div>
 </div>
 
-            <div class="pc" data-lat="35.8089" data-lng="127.1531" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+      <div class="pc" data-lat="35.8089" data-lng="127.1531" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#EDE7F6;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">🌉</div>
     <div style="flex:1;min-width:0;">
@@ -4387,7 +4385,7 @@ a,button{-webkit-tap-highlight-color:transparent;}
   </div>
 </div>
 
-            <div class="pc" data-lat="35.81" data-lng="127.1465" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
+      <div class="pc" data-lat="35.81" data-lng="127.1465" style="background:#fff;border-radius:16px;margin-bottom:12px;padding:14px;box-shadow:0 3px 14px rgba(226,114,91,.1);">
   <div style="display:flex;gap:12px;margin-bottom:10px;">
     <div style="width:54px;height:54px;border-radius:12px;background:#EDE7F6;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;">📖</div>
     <div style="flex:1;min-width:0;">
